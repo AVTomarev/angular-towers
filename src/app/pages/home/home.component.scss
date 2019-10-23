@@ -1,0 +1,14 @@
+.towers-container {
+  padding: 50px 50px 0;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+}
+
+.tower {
+  margin-right: 30px;
+
+  &:last-child {
+    margin: 0;
+  }
+}

@@ -1,0 +1,45 @@
+<div class="wrapper">
+  <h2 class="title title_top">
+    {{ indicator.title }}
+  </h2>
+  <span class="indicator">
+    {{ indicator.value | valueToPercents: indicator.minValue : indicator.maxValue }}
+  </span>
+  <div
+    class="status-line"
+    [ngClass]="{'status-line_red': indicator.value === indicator.maxValue || indicator.value === indicator.minValue }"
+  ></div>
+
+  <div class="tower-top"></div>
+  <div class="tower-ring"></div>
+  <div class="tower-container">
+    <div class="tower-body"></div>
+    <div class="tower-ring"></div>
+    <div class="tower-body"></div>
+    <div class="tower-ring"></div>
+    <div class="tower-body"></div>
+    <div class="tower-ring"></div>
+    <div class="tower-body"></div>
+    <div class="tower-container__liquid-container">
+      <div
+        [ngStyle]="{'height': (indicator.value | valueToPercents: indicator.minValue : indicator.maxValue) + '%' }"
+        class="tower-container__liquid-indicator"
+      ></div>  
+    </div>
+  </div>
+  <div class="tower-ring"></div>
+  <div class="tower-bottom">
+    <div class="tower-bottom__some-indicator"></div>
+  </div>
+
+  <h2 class="title title_bottom">
+    Масса карналита
+  </h2>
+  <span class="indicator indicator_bottom">
+    {{ indicator.value | separateDigits }}
+  </span>
+  <div
+    class="status-line"
+    [ngClass]="{'status-line_red': indicator.value === indicator.maxValue || indicator.value === indicator.minValue }"
+  ></div>
+</div>
